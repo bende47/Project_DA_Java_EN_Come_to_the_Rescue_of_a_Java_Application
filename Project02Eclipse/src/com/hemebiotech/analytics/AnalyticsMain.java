@@ -1,6 +1,5 @@
 package com.hemebiotech.analytics;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,7 +11,7 @@ public class AnalyticsMain {
 		List<String> symptoms = rsdff.getSymptoms("./Project02Eclipse/symptoms.txt");
 
 		AnalyticsCounter analyticsCounter = new AnalyticsCounter();
-		HashMap<String, Integer> groupedSymptoms = analyticsCounter.groupSymptoms(symptoms);
+		Map<String, Integer> groupedSymptoms = analyticsCounter.groupSymptoms(symptoms);
 
 		groupedSymptoms = analyticsCounter.sortSymptoms(groupedSymptoms);
 

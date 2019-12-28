@@ -15,8 +15,8 @@ public class AnalyticsCounter {
      * @param alphabeticSymptomList
      * @return Map of symptom and its number
      */
-    public HashMap<String, Integer> groupSymptoms(List<String> alphabeticSymptomList) {
-    	HashMap<String, Integer> map = new HashMap<>();
+    public Map<String, Integer> groupSymptoms(List<String> alphabeticSymptomList) {
+    	Map<String, Integer> map = new HashMap<>();
         for (String symptom : alphabeticSymptomList) {
             Integer nombre = map.get(symptom);
             if (nombre == null) {
@@ -33,9 +33,9 @@ public class AnalyticsCounter {
      * @param groupedSymptoms
      * @return list of symptoms sorted in alphabetical order
      */
-    public HashMap<String, Integer> sortSymptoms(HashMap<String, Integer> groupedSymptoms) {        
+    public Map<String, Integer> sortSymptoms(Map<String, Integer> groupedSymptoms) {        
         
-    	HashMap<String, Integer> result = new LinkedHashMap<>();
+    	Map<String, Integer> result = new LinkedHashMap<>();
         groupedSymptoms.entrySet().stream()
                 .sorted(Map.Entry.comparingByKey())
                 .forEachOrdered(x -> result.put(x.getKey(), x.getValue()));     

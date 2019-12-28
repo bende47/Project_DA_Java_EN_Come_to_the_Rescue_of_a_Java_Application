@@ -5,8 +5,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -52,7 +50,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
      */
    
 	@Override
-	public void writeFile(String fileOut, HashMap<String, Integer> groupedSymptoms) {
+	public void writeFile(String fileOut,Map<String, Integer> groupedSymptoms) {
 		try(FileWriter writer = new FileWriter(fileOut)) {            
             for (Entry<String, Integer> key : groupedSymptoms.entrySet()) {
                 writer.write(key.getKey() + " = " + groupedSymptoms.get(key.getKey()) + "\n");
