@@ -15,7 +15,7 @@ public class AnalyticsMain {
 
 		groupedSymptoms = analyticsCounter.sortSymptoms(groupedSymptoms);
 
-		rsdff.writeFile("./Project02Eclipse/result.out", groupedSymptoms);
+		rsdff.writeFile("./Project02Eclipse/results.out", groupedSymptoms);
 
 	}
 
