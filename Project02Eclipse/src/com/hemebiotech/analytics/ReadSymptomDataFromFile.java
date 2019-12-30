@@ -23,7 +23,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	
 	@Override
 	public List<String> getSymptoms(String filepath) {
-		ArrayList<String> result = new ArrayList<>();
+		List<String> result = new ArrayList<>();
 		
 		if (filepath != null) {
 			try(BufferedReader reader = new BufferedReader (new FileReader(filepath))) {				
@@ -33,7 +33,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 					result.add(line.toLowerCase());
 					line = reader.readLine();
 				}
-				reader.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -55,7 +54,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
             for (Entry<String, Integer> key : groupedSymptoms.entrySet()) {
                 writer.write(key.getKey() + " = " + groupedSymptoms.get(key.getKey()) + "\n");
             }
-            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
